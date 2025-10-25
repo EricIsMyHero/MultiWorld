@@ -2,8 +2,9 @@
     --primary-color: #4CAF50; /* Əsas yaşıl rəng */
     --secondary-color: #66BB6A; /* Açıq yaşıl */
     --background-color: #f4f4f4;
-    --text-color: #333;
-    --dark-text: #2e7d32; /* Tünd yaşıl mətn üçün */
+    --text-color: #000; /* QARA mətn rəngi */
+    --dark-text: #000; /* Tünd yaşıl mətn üçün QARA */
+    --border-color: #ccc; /* Yeni çərçivə rəngi */
 }
 
 body {
@@ -63,13 +64,18 @@ main {
     max-width: 1200px;
     margin: 20px auto;
     background-color: white;
-    border-radius: 8px;
+    /* Əvvəlki kölgəni saxlayıram, lakin əsas fokus aşağıdadır */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
+/* Oyunlar üçün Konteyner (Çərçivə) */
 #game-list {
     min-height: 300px;
-    padding: 10px;
+    padding: 20px; /* Daxili boşluq */
+    border: 1px solid var(--border-color); /* Yeni çərçivə */
+    border-radius: 5px;
+    margin-top: 20px; /* Main elementindən yuxarıdakı boşluq */
 }
 
 .placeholder-text {
@@ -91,14 +97,14 @@ main {
 }
 
 .game-title {
-    color: var(--dark-text);
+    color: var(--dark-text); /* QARA mətn */
     font-weight: bold;
     font-size: 1.2em;
     margin-right: 15px;
 }
 
 .game-details {
-    color: #666;
+    color: var(--text-color); /* QARA mətn */
     font-size: 0.9em;
 }
 
