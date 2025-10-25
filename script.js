@@ -24,21 +24,25 @@ const allGames = [
 ];
 
 const navButtons = document.querySelectorAll('.nav-button');
-const filterButtons = document.querySelectorAll('.filter-button'); // Filtr düymələri
+const filterButtons = document.querySelectorAll('.filter-button');
 const gameList = document.getElementById('game-list');
+const searchInput = document.getElementById('search-input'); // Yeni element
 
-// Cari vəziyyəti saxlayan dəyişənlər
 let currentCategory = 'all';
 let currentSort = 'az';
 
-// Oyunları filtrləyib sıralayan ƏSAS FUNKSİYA
+// Oyunları filtrləyib sıralayan ƏSAS FUNKSİYA - Axtarış əlavə edildi
 function updateGameList() {
-    // 1. Filtrləmə
-    let filteredGames = allGames.filter(game => 
-        game.category.includes(currentCategory)
-    );
+    const searchTerm = searchInput.value.toLowerCase(); // Axtarış mətnini al
 
-    // 2. Sıralama
+    // 1. Filtrləmə (Kateqoriya VƏ Axtarışa görə)
+    let filteredGames = allGames.filter(game => {
+        const categoryMatch = game.category.includes(currentCategory);
+        const searchMatch = game.title.toLowerCase().includes(searchTerm); // Oyun adına görə axtar
+        return categoryMatch && searchMatch;
+    });
+
+    // 2. Sıralama (A-Z / Z-A)
     filteredGames.sort((a, b) => {
         const titleA = a.title.toUpperCase();
         const titleB = b.title.toUpperCase();
@@ -55,7 +59,7 @@ function updateGameList() {
         return 0;
     });
 
-    renderGames(filteredGames); // Siyahını göstər
+    renderGames(filteredGames); 
 }
 
 
@@ -123,6 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
     filterButtons.forEach(button => {
         button.addEventListener('click', handleSortClick);
     });
+
+    // Axtarış sahəsinə 'input' hadisəsini əlavə et
+    searchInput.addEventListener('input', updateGameList);
 
     // Paylaşma düyməsinə klik hadisəsini əlavə et
     const shareButton = document.getElementById('share-button-id');
