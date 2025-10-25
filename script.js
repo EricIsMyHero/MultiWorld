@@ -63,3 +63,17 @@ navButtons.forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     renderGames('all');
 });
+
+// YENİ PAYLAŞMA FUNKSİYASI
+function shareSite() {
+    const shareData = {
+        title: "my-games", // Saytın adını istifadə etdim
+        text: "Əlinin oynadığı bütün oyunların siyahısı burada.", // Mətni aydınlaşdırdım
+        url: window.location.href
+    };
+    if (navigator.share) {
+        navigator.share(shareData).catch(err => console.error("Paylaşmaq mümkün olmadı:", err));
+    } else {
+        alert("Paylaşma funksiyası bu cihazda dəstəklənmir.");
+    }
+}
