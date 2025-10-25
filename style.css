@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #4CAF50; /* Əsas yaşıl rəng */
-    --secondary-color: #000; /* Açıq yaşıl */
+    --primary-color: #4CAF50;
+    --secondary-color: #66BB6A;
     --background-color: #f4f4f4;
-    --text-color: #000; /* QARA mətn rəngi */
-    --dark-text: #000; /* QARA mətn */
+    --text-color: #000;
+    --dark-text: #000;
     --border-color: #ccc;
+    --header-bg: #e8f5e9; /* Başlıq üçün açıq yaşıl fon */
 }
 
 body {
@@ -94,12 +95,33 @@ main {
 }
 
 /* Oyunlar üçün Konteyner (Çərçivə) */
-#game-list {
-    min-height: 300px;
-    padding: 20px;
+#game-list-container {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     margin-top: 20px;
+    padding: 0; /* İçəridəki padding-i sildim, başlıq və siyahıya verəcəyik */
+    overflow: hidden; /* Border-radius üçün */
+}
+
+.list-header {
+    display: flex;
+    background-color: var(--header-bg); /* Açıq yaşıl fon */
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.list-header span {
+    flex: 1; /* Hər başlığa bərabər yer ver */
+}
+
+/* Oyun Siyahısının Özü */
+#game-list {
+    min-height: 300px;
+    padding: 0 20px; /* Konteynerin daxili padding-i */
 }
 
 .placeholder-text {
@@ -109,22 +131,29 @@ main {
     padding-top: 50px;
 }
 
+/* Oyun Elementi Sətir Stili */
 .game-item {
+    display: flex; /* Sütunları düzmək üçün flexbox */
+    align-items: center;
     border-bottom: 1px solid #eee;
     padding: 15px 0;
-    display: flex;
-    align-items: center;
 }
 
 .game-item:last-child {
     border-bottom: none;
 }
 
+/* Oyun elementlərinin sütunları */
+.game-title, .game-details, .game-opinion {
+    flex: 1; /* Hər sütuna bərabər yer ver */
+    padding-right: 15px; /* Sütunlar arasında boşluq */
+    word-wrap: break-word; /* Uzun sözləri qırmaq üçün */
+}
+
 .game-title {
     color: var(--dark-text);
     font-weight: bold;
-    font-size: 1.2em;
-    margin-right: 15px;
+    font-size: 1.1em;
 }
 
 .game-details {
