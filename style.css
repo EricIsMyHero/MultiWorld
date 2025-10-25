@@ -95,11 +95,11 @@ main {
     border-radius: 8px;
 }
 
-/* FILTR DÜYMƏLƏRİ STİLLƏRİ */
+/* FILTR DÜYMƏLƏRİ VƏ AXTARIŞ STİLLƏRİ */
 .filter-controls {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px; /* Boşluğu artırdım */
     margin-bottom: 15px;
     padding: 0 10px;
 }
@@ -124,7 +124,22 @@ main {
     background-color: var(--secondary-color);
     color: white;
 }
-/* FILTR DÜYMƏLƏRİ STİLLƏRİ SONU */
+
+/* YENİ AXTARIŞ INPUT STİLİ */
+#search-input {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    flex-grow: 1; /* Axtarış sahəsi maksimum yer tutsun */
+    max-width: 300px;
+}
+
+#search-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+/* AXTARIŞ INPUT STİLİ SONU */
 
 
 /* Oyunlar üçün Konteyner (Çərçivə) */
