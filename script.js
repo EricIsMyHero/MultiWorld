@@ -1,27 +1,28 @@
-// Nümunə oyun məlumatları
+// Nümunə oyun məlumatları - YENİLƏNİB
 const allGames = [
-    { title: "The Witcher 3", category: "all", details: "350 saat oynanıb" },
-    { title: "Cyberpunk 2077", category: "all active", details: "Hazırda oynanılır" },
-    { title: "Red Dead Redemption 2", category: "all top10 ali-favorites", details: "Ən sevimli oyun" },
-    { title: "Elden Ring", category: "all top10 active", details: "Çətin, lakin maraqlı" },
-    { title: "Half-Life 2", category: "all ali-favorites", details: "Klassik" },
-    { title: "Baldur's Gate 3", category: "all top10 active", details: "Yeni başlayanlardan" },
-    { title: "Mass Effect Legendary Edition", category: "all", details: "Trilogiya" },
-    { title: "Portal 2", category: "all top10 ali-favorites", details: "Əla Bulmacalar" },
-    { title: "Doom Eternal", category: "all active", details: "Sürətli FPS" },
-    { title: "Horizon Zero Dawn", category: "all", details: "Açıq dünya" },
-    // Yalnız Top 10 üçün
-    { title: "God of War (2018)", category: "all top10", details: "Epik səyahət" },
-    // Yalnız Əlinin Vazgeçilməzləri üçün
-    { title: "StarCraft II", category: "all ali-favorites", details: "Ən yaxşı RTS" },
-    { title: "Diablo II: Resurrected", category: "all ali-favorites", details: "Köhnə dost" },
+    { title: "The Witcher 3", category: "all", time: "350+ saat", opinion: "Hekayə, qəhrəmanlar və dünya heyrətamizdir."},
+    { title: "Cyberpunk 2077", category: "all active", time: "100 saat", opinion: "Gözəl dizayn, hazırda aktiv oynanılır."},
+    { title: "Red Dead Redemption 2", category: "all top10 ali-favorites", time: "250 saat", opinion: "Ən sevimli açıq dünya və atmosfer."},
+    { title: "Elden Ring", category: "all top10 active", time: "120 saat", opinion: "Çətin, lakin mükafatlandırıcı döyüşlər."},
+    { title: "Half-Life 2", category: "all ali-favorites", time: "15 saat", opinion: "Zamansız klassik və fizika mühəndisliyi nümunəsi."},
+    { title: "Baldur's Gate 3", category: "all top10 active", time: "80 saat", opinion: "Yeni başlayanlardan, lakin D&D ruhunu tam hiss etdirir."},
+    { title: "Mass Effect Legendary Edition", category: "all", time: "180 saat", opinion: "Kosmos operası. Sevdiyim trilogiya."},
+    { title: "Portal 2", category: "all top10 ali-favorites", time: "10 saat", opinion: "Əla bulmacalar və yumor."},
+    { title: "Doom Eternal", category: "all active", time: "30 saat", opinion: "Sürətli FPS, təkrar oynamağa dəyər."},
+    { title: "Horizon Zero Dawn", category: "all", time: "70 saat", opinion: "Robot heyvan ovçuluğu maraqlıdır."},
+    { title: "God of War (2018)", category: "all top10", time: "50 saat", opinion: "Ata-oğul hekayəsi və döyüşlər möhtəşəmdir."},
+    { title: "StarCraft II", category: "all ali-favorites", time: "Çox illər", opinion: "Ən yaxşı real-time strategiya (RTS) oyunu."},
+    { title: "Diablo II: Resurrected", category: "all ali-favorites", time: "100+ saat", opinion: "Köhnə dost, qaranlıq atmosfer."},
 ];
 
 const navButtons = document.querySelectorAll('.nav-button');
 const gameList = document.getElementById('game-list');
+// ... (shareSite funksiyası olduğu kimi qalır) ...
 
+
+// renderGames funksiyası - YENİLƏNİB
 function renderGames(category) {
-    gameList.innerHTML = ''; // Siyahını təmizlə
+    gameList.innerHTML = ''; 
 
     const filteredGames = allGames.filter(game => 
         game.category.includes(category)
@@ -35,9 +36,12 @@ function renderGames(category) {
     filteredGames.forEach(game => {
         const gameItem = document.createElement('div');
         gameItem.classList.add('game-item');
+        
+        // Yeni cədvəl formatına uyğun HTML strukturu
         gameItem.innerHTML = `
             <span class="game-title">${game.title}</span>
-            <span class="game-details">${game.details}</span>
+            <span class="game-details">${game.time}</span> 
+            <span class="game-opinion">${game.opinion}</span>
         `;
         gameList.appendChild(gameItem);
     });
