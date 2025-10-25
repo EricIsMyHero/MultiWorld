@@ -1,16 +1,17 @@
 :root {
     --primary-color: #4CAF50;
     --secondary-color: #66BB6A;
-    --background-color: #f4f4f4;
+    --background-color: #eaeaea; /* Açıq boz fon */
     --text-color: #000;
     --dark-text: #000;
-    --border-color: #ccc;
-    --header-bg: #e8f5e9; /* Başlıq üçün açıq yaşıl fon */
+    --border-color: #b0b0b0; /* Daha tünd sərhəd rəngi */
+    --header-bg: #e8f5e9; 
+    --line-color: #ddd; /* Sətir sərhədi üçün açıq rəng */
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--background-color);
+    background-color: var(--background-color); /* Yeni arxa fon */
     margin: 0;
     padding: 0;
     color: var(--text-color);
@@ -21,7 +22,7 @@ header {
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    position: relative; /* Share düyməsi üçün əlavə edildi */
+    position: relative;
 }
 
 h1 {
@@ -99,13 +100,14 @@ main {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     margin-top: 20px;
-    padding: 0; /* İçəridəki padding-i sildim, başlıq və siyahıya verəcəyik */
-    overflow: hidden; /* Border-radius üçün */
+    padding: 0; 
+    overflow: hidden; 
 }
 
+/* Cədvəl Başlıqları Stili */
 .list-header {
     display: flex;
-    background-color: var(--header-bg); /* Açıq yaşıl fon */
+    background-color: var(--header-bg); 
     border-bottom: 1px solid var(--border-color);
     padding: 15px 20px;
     font-weight: bold;
@@ -115,13 +117,21 @@ main {
 }
 
 .list-header span {
-    flex: 1; /* Hər başlığa bərabər yer ver */
+    /* Sütunların Eni: Oyuna daha çox yer, müddətə az yer */
+    flex: 2; /* Oyun adı */
 }
+.list-header .header-time {
+    flex: 1; /* Təxmini Oynama Müddəti */
+}
+.list-header .header-opinion {
+    flex: 3; /* Əlinin Fikri */
+}
+
 
 /* Oyun Siyahısının Özü */
 #game-list {
     min-height: 300px;
-    padding: 0 20px; /* Konteynerin daxili padding-i */
+    padding: 0 20px; 
 }
 
 .placeholder-text {
@@ -131,11 +141,11 @@ main {
     padding-top: 50px;
 }
 
-/* Oyun Elementi Sətir Stili */
+/* Oyun Elementi Sətir Stili - Cədvəl sətirləri kimi */
 .game-item {
-    display: flex; /* Sütunları düzmək üçün flexbox */
-    align-items: center;
-    border-bottom: 1px solid #eee;
+    display: flex; 
+    align-items: flex-start; /* Mətni yuxarıdan başlamaq üçün */
+    border-bottom: 1px solid var(--line-color); /* Sətirlər arasında yüngül xətt */
     padding: 15px 0;
 }
 
@@ -145,20 +155,26 @@ main {
 
 /* Oyun elementlərinin sütunları */
 .game-title, .game-details, .game-opinion {
-    flex: 1; /* Hər sütuna bərabər yer ver */
-    padding-right: 15px; /* Sütunlar arasında boşluq */
-    word-wrap: break-word; /* Uzun sözləri qırmaq üçün */
+    padding-right: 15px; 
+    word-wrap: break-word; 
+    
+    /* Başlıqlardakı nisbəti burada da tətbiq edirik */
+    flex: 2; /* Oyun adı */
 }
+.game-details {
+    flex: 1; /* Təxmini Oynama Müddəti */
+    font-weight: bold; /* Müddət fərqlənsin */
+    font-size: 1em;
+}
+.game-opinion {
+    flex: 3; /* Əlinin Fikri */
+}
+
 
 .game-title {
     color: var(--dark-text);
     font-weight: bold;
     font-size: 1.1em;
-}
-
-.game-details {
-    color: var(--text-color);
-    font-size: 0.9em;
 }
 
 /* Footer Style */
