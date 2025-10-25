@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGames('all');
 });
 
-// YENİ PAYLAŞMA FUNKSİYASI
+// Paylaşma funksiyası
 function shareSite() {
     const shareData = {
-        title: "my-games", // Saytın adını istifadə etdim
-        text: "Əlinin oynadığı bütün oyunların siyahısı burada.", // Mətni aydınlaşdırdım
+        title: "my-games",
+        text: "Əlinin oynadığı bütün oyunların siyahısı burada.",
         url: window.location.href
     };
     if (navigator.share) {
@@ -77,3 +77,20 @@ function shareSite() {
         alert("Paylaşma funksiyası bu cihazda dəstəklənmir.");
     }
 }
+
+// DOM tam yükləndikdən sonra funksiyaları təyin et
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Naviqasiya düymələrinə klik hadisəsini əlavə et
+    navButtons.forEach(button => {
+        button.addEventListener('click', handleNavClick);
+    });
+
+    // 2. Paylaşma düyməsinə klik hadisəsini əlavə et
+    const shareButton = document.getElementById('share-button-id');
+    if (shareButton) {
+        shareButton.addEventListener('click', shareSite);
+    }
+    
+    // 3. Səhifə yüklənərkən ilkin siyahını göstər
+    renderGames('all');
+});
