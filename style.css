@@ -3,8 +3,8 @@
     --secondary-color: #66BB6A; /* Açıq yaşıl */
     --background-color: #f4f4f4;
     --text-color: #000; /* QARA mətn rəngi */
-    --dark-text: #000; /* Tünd yaşıl mətn üçün QARA */
-    --border-color: #ccc; /* Yeni çərçivə rəngi */
+    --dark-text: #000; /* QARA mətn */
+    --border-color: #ccc;
 }
 
 body {
@@ -20,6 +20,7 @@ header {
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative; /* Share düyməsi üçün əlavə edildi */
 }
 
 h1 {
@@ -59,12 +60,35 @@ nav {
     color: white;
 }
 
+/* YENİ SHARE BUTTON STILLƏRİ */
+.share-button {
+    position: absolute;
+    top: 10px; /* Sizin verdiyiniz dəyərlər */
+    right: 10px; /* Sizin verdiyiniz dəyərlər */
+}
+
+.share-button button {
+    padding: 8px 15px; /* Sizin verdiyiniz dəyərlər */
+    background-color: var(--primary-color); /* Yaşıl rənglə uyğunlaşdırdım */
+    color: white; /* Mətn rəngini ağ etdim */
+    border: none;
+    border-radius: 5px; /* Radius 5px olsun */
+    font-size: 14px; /* Sizin verdiyiniz dəyərlər */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.share-button button:hover {
+    background-color: var(--secondary-color); /* Daha açıq yaşıl */
+}
+/* YENİ SHARE BUTTON STILLƏRİ SONU */
+
+
 main {
     padding: 20px;
     max-width: 1200px;
     margin: 20px auto;
     background-color: white;
-    /* Əvvəlki kölgəni saxlayıram, lakin əsas fokus aşağıdadır */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
 }
@@ -72,10 +96,10 @@ main {
 /* Oyunlar üçün Konteyner (Çərçivə) */
 #game-list {
     min-height: 300px;
-    padding: 20px; /* Daxili boşluq */
-    border: 1px solid var(--border-color); /* Yeni çərçivə */
+    padding: 20px;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
-    margin-top: 20px; /* Main elementindən yuxarıdakı boşluq */
+    margin-top: 20px;
 }
 
 .placeholder-text {
@@ -97,14 +121,14 @@ main {
 }
 
 .game-title {
-    color: var(--dark-text); /* QARA mətn */
+    color: var(--dark-text);
     font-weight: bold;
     font-size: 1.2em;
     margin-right: 15px;
 }
 
 .game-details {
-    color: var(--text-color); /* QARA mətn */
+    color: var(--text-color);
     font-size: 0.9em;
 }
 
