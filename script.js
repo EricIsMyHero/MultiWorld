@@ -1,10 +1,10 @@
-// Nümunə oyun məlumatları - YENİLƏNİB
+// Nümunə oyun məlumatları - YENİ OYUNLARINIZ İLƏ
 const allGames = [
     { title: "Mobile Legends Bang Bang", category: "all", time: "350+ saat", opinion: "Hekayə, qəhrəmanlar və dünya heyrətamizdir."},
     { title: "Pubg Mobile", category: "all active", time: "100 saat", opinion: "Gözəl dizayn, hazırda aktiv oynanılır."},
     { title: "Minecraft", category: "all top10 ali-favorites", time: "250 saat", opinion: "Ən sevimli açıq dünya və atmosfer."},
     { title: "Valorant Mobile", category: "all top10 active", time: "120 saat", opinion: "Çətin, lakin mükafatlandırıcı döyüşlər."},
-    { title: "Clash Of Clans", category: "all ali-favorites", time: "15 saat", opinion: "Zamansız klassik və fizika mühəndisliyi nümunəsi."},
+    { title: "Clash Of Clans", category: "all ali-favorites", time: "15 saat", opinion: "Zamansız klassik və fizika mühəndisliyi nümunəsidir."},
     { title: "Clash Royale", category: "all top10 active", time: "80 saat", opinion: "Yeni başlayanlardan, lakin D&D ruhunu tam hiss etdirir."},
     { title: "Brawl Stars", category: "all", time: "180 saat", opinion: "Kosmos operası. Sevdiyim trilogiya."},
     { title: "Hay Day", category: "all top10 ali-favorites", time: "10 saat", opinion: "Əla bulmacalar və yumor."},
@@ -24,28 +24,54 @@ const allGames = [
 ];
 
 const navButtons = document.querySelectorAll('.nav-button');
+const filterButtons = document.querySelectorAll('.filter-button'); // Filtr düymələri
 const gameList = document.getElementById('game-list');
-// ... (shareSite funksiyası olduğu kimi qalır) ...
 
+// Cari vəziyyəti saxlayan dəyişənlər
+let currentCategory = 'all';
+let currentSort = 'az';
 
-// renderGames funksiyası - YENİLƏNİB
-function renderGames(category) {
-    gameList.innerHTML = ''; 
-
-    const filteredGames = allGames.filter(game => 
-        game.category.includes(category)
+// Oyunları filtrləyib sıralayan ƏSAS FUNKSİYA
+function updateGameList() {
+    // 1. Filtrləmə
+    let filteredGames = allGames.filter(game => 
+        game.category.includes(currentCategory)
     );
 
-    if (filteredGames.length === 0) {
+    // 2. Sıralama
+    filteredGames.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+
+        if (currentSort === 'az') {
+            if (titleA < titleB) return -1;
+            if (titleA > titleB) return 1;
+            return 0;
+        } else if (currentSort === 'za') {
+            if (titleA > titleB) return -1;
+            if (titleA < titleB) return 1;
+            return 0;
+        }
+        return 0;
+    });
+
+    renderGames(filteredGames); // Siyahını göstər
+}
+
+
+// Sadəcə siyahını HTML-ə çıxaran funksiya
+function renderGames(gamesToRender) {
+    gameList.innerHTML = ''; 
+
+    if (gamesToRender.length === 0) {
         gameList.innerHTML = `<p class="placeholder-text">Bu kateqoriyada oyun tapılmadı.</p>`;
         return;
     }
 
-    filteredGames.forEach(game => {
+    gamesToRender.forEach(game => {
         const gameItem = document.createElement('div');
         gameItem.classList.add('game-item');
         
-        // Yeni cədvəl formatına uyğun HTML strukturu
         gameItem.innerHTML = `
             <span class="game-title">${game.title}</span>
             <span class="game-details">${game.time}</span> 
@@ -55,26 +81,21 @@ function renderGames(category) {
     });
 }
 
-function handleNavClick(event) {
-    // Bütün düymələrdən 'active' sinfini sil
-    navButtons.forEach(btn => btn.classList.remove('active'));
 
-    // Kliklənən düyməyə 'active' sinfini əlavə et
+// Naviqasiya (Kateqoriya) Klik Hadisəsi
+function handleNavClick(event) {
+    navButtons.forEach(btn => btn.classList.remove('active'));
     event.currentTarget.classList.add('active');
 
-    const category = event.currentTarget.getAttribute('data-category');
-    renderGames(category);
+    currentCategory = event.currentTarget.getAttribute('data-category');
+    updateGameList(); // Yeni kateqoriyanı tətbiq et
 }
 
-// Naviqasiya düymələrinə klik hadisəsini əlavə et
-navButtons.forEach(button => {
-    button.addEventListener('click', handleNavClick);
-});
-
-// Səhifə yüklənərkən ilkin (Ümumi Oyunlar) siyahısını göstər
-document.addEventListener('DOMContentLoaded', () => {
-    renderGames('all');
-});
+// Sıralama (Filtr) Klik Hadisəsi
+function handleSortClick(event) {
+    currentSort = event.currentTarget.getAttribute('data-sort');
+    updateGameList(); // Yeni sıralamanı tətbiq et
+}
 
 // Paylaşma funksiyası
 function shareSite() {
@@ -90,19 +111,25 @@ function shareSite() {
     }
 }
 
+
 // DOM tam yükləndikdən sonra funksiyaları təyin et
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Naviqasiya düymələrinə klik hadisəsini əlavə et
+    // Naviqasiya düymələrinə klik hadisəsini əlavə et
     navButtons.forEach(button => {
         button.addEventListener('click', handleNavClick);
     });
+    
+    // Filtr düymələrinə klik hadisəsini əlavə et
+    filterButtons.forEach(button => {
+        button.addEventListener('click', handleSortClick);
+    });
 
-    // 2. Paylaşma düyməsinə klik hadisəsini əlavə et
+    // Paylaşma düyməsinə klik hadisəsini əlavə et
     const shareButton = document.getElementById('share-button-id');
     if (shareButton) {
         shareButton.addEventListener('click', shareSite);
     }
     
-    // 3. Səhifə yüklənərkən ilkin siyahını göstər
-    renderGames('all');
+    // Səhifə yüklənərkən ilkin siyahını göstər
+    updateGameList();
 });
