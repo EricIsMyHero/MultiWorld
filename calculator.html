@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator | MultiWorld</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>MultiWorld</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="snake.html">Snake Game</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="words.html">Word Learner</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Calculator</h2>
+    <div id="calculator">
+      <input type="text" id="display" readonly>
+
+      <div id="buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+
+        <button>0</button>
+        <button>.</button>
+        <button>=</button>
+        <button>+</button>
+
+        <button id="clear">C</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 MultiWorld</p>
+  </footer>
+
+  <script>
+    const display = document.getElementById("display");
+    const buttons = document.querySelectorAll("#buttons button");
+    const clear = document.getElementById("clear");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const value = button.textContent;
+
+        if (value === "=") {
+          try {
+            display.value = eval(display.value);
+          } catch {
+            display.value = "Error";
+          }
+        } else if (value === "C") {
+          display.value = "";
+        } else {
+          display.value += value;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html> 
