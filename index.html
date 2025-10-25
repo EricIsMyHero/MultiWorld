@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My-games - Oyunlarım</title>
+    <title>my-games - Oyunlarım</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,20 +21,26 @@
     </header>
     
     <main>
-    <div id="game-list-container">
-        
-        <div class="list-header">
-            <span class="header-title">Oyun Adı</span>
-            <span class="header-time">Təxmini Oynama Müddəti</span>
-            <span class="header-opinion">Əlinin Fikri</span>
+        <div class="filter-controls">
+            <span>Sırala:</span>
+            <button class="filter-button" data-sort="az">A-Z</button>
+            <button class="filter-button" data-sort="za">Z-A</button>
         </div>
         
-        <section id="game-list">
-            <p class="placeholder-text">Oyun siyahısını görmək üçün yuxarıdakı kateqoriyalardan birini seçin.</p>
-        </section>
+        <div id="game-list-container">
+            
+            <div class="list-header">
+                <span class="header-title">Oyun Adı</span>
+                <span class="header-time">Təxmini Oynama Müddəti</span>
+                <span class="header-opinion">Əlinin Fikri</span>
+            </div>
+            
+            <section id="game-list">
+                <p class="placeholder-text">Oyun siyahısını görmək üçün yuxarıdakı kateqoriyalardan birini seçin.</p>
+            </section>
 
-    </div>
-</main>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 my-games</p>
