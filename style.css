@@ -150,8 +150,8 @@ nav {
     --primary-color: #FF4500; 
     --secondary-color: #FF6347; 
     --background-color: #222; /* Tünd fon */
-    --text-color: #fff; /* Ağ mətn */
-    --dark-text: #fff; /* Ağ mətn */
+    --text-color: #000; /* Default: Qara mətn */
+    --dark-text: #000; /* Default: Qara başlıqlar/mətn */
     --border-color: #888;
     --header-bg: #444; 
     --line-color: #333; 
@@ -162,8 +162,8 @@ nav {
     --primary-color: #FFA500; 
     --secondary-color: #FFC468;
     --background-color: #000; /* Qara fon */
-    --text-color: #fff; /* Ağ mətn */
-    --dark-text: #fff; /* Ağ mətn */
+    --text-color: #000; /* Default: Qara mətn */
+    --dark-text: #000; /* Default: Qara başlıqlar/mətn */
     --border-color: #FFA500; 
     --header-bg: #1a1a1a; 
     --line-color: #2a2a2a; 
