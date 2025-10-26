@@ -9,8 +9,21 @@
 <body>
     <header>
         <h1>Oyunlar</h1>
-        <div class="share-button">
-             <button id="share-button-id">💌 Paylaş</button>
+        <div class="settings-container">
+            <button id="settings-button" class="action-button">⚙️ Parametrlər</button>
+
+            <div id="settings-menu" class="settings-menu-hidden">
+                <div class="setting-group">
+                    <label>Saytın Fonu:</label>
+                    <div class="theme-options">
+                        <button class="theme-button" data-theme="default">Yaşıl, Ağ</button>
+                        <button class="theme-button" data-theme="red-black">Qırmızı, Qara</button>
+                        <button class="theme-button" data-theme="orange-dark">Ağ, Qara və Narıncı</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="share-button-id" class="action-button share-button-style">💌 Paylaş</button>
         </div>
         <nav>
             <button class="nav-button active" data-category="all">Ümumi Oyunlar</button>
