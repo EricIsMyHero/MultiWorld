@@ -39,7 +39,7 @@ let currentSort = 'az';
 function updateGameList() {
     const searchTerm = searchInput.value.toLowerCase(); // Axtarış mətnini al
 
-    // 1. Filtrləmə (Kateqoriya VƏ Axtarışa görə)
+    // 1. Filtrləmə (Kateqoriya və Axtarışa görə)
     let filteredGames = allGames.filter(game => {
         const categoryMatch = game.category.includes(currentCategory);
         const searchMatch = game.title.toLowerCase().includes(searchTerm); // Oyun adına görə axtar
