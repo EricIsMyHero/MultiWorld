@@ -237,7 +237,7 @@ main {
     background-color: transparent; /* Fonu şəffaf et */
 }
 
-/* Cədvəl Başlıqları Stili */
+/* Cədvəl Başlıqları Stili - YENİLƏNDİ */
 .list-header {
     display: flex;
     background-color: var(--header-bg); 
@@ -249,7 +249,10 @@ main {
     font-size: 0.9em;
 }
 
-.list-header span {
+.list-header .header-number {
+    flex: 0.5; /* Sıra nömrəsi üçün az yer */
+}
+.list-header .header-title {
     flex: 2; /* Oyun adı */
 }
 .list-header .header-time {
@@ -258,7 +261,6 @@ main {
 .list-header .header-opinion {
     flex: 3; /* Əlinin Fikri */
 }
-
 
 /* Oyun Siyahısının Özü */
 #game-list {
@@ -273,7 +275,7 @@ main {
     padding-top: 50px;
 }
 
-/* Oyun Elementi Sətir Stili - Cədvəl sətirləri kimi */
+/* Oyun Elementi Sətir Stili - YENİLƏNDİ */
 .game-item {
     display: flex; 
     align-items: flex-start;
@@ -281,31 +283,31 @@ main {
     padding: 15px 0;
 }
 
-.game-item:last-child {
-    border-bottom: none;
+/* Oyun elementlərinin sütunları - YENİLƏNDİ */
+.game-number {
+    flex: 0.5; /* Sıra nömrəsi */
+    padding-right: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
 }
-
-/* Oyun elementlərinin sütunları */
-.game-title, .game-details, .game-opinion {
-    padding-right: 15px; 
-    word-wrap: break-word; 
-    
+.game-title {
     flex: 2; /* Oyun adı */
+    padding-right: 15px;
+    word-wrap: break-word; 
+    color: var(--dark-text);
+    font-weight: bold;
+    font-size: 1.1em;
 }
 .game-details {
     flex: 1; /* Təxmini Oynama Müddəti */
+    padding-right: 15px; 
     font-weight: bold;
     font-size: 1em;
 }
 .game-opinion {
     flex: 3; /* Əlinin Fikri */
-}
-
-
-.game-title {
-    color: var(--dark-text);
-    font-weight: bold;
-    font-size: 1.1em;
+    padding-right: 15px;
+    word-wrap: break-word; 
 }
 
 /* Footer Style */
