@@ -255,8 +255,9 @@ main {
 .list-header .header-title {
     flex: 2; /* Oyun adı */
 }
-.list-header .header-time {
-    flex: 1; /* Təxmini Oynama Müddəti */
+.list-header .header-score {
+    flex: 1; /* Təxmini Oynama Müddəti SÜTUNUNUN FLEX DƏYƏRİ EYNİ QALIR */
+    /* Əlavə dəyişikliyə ehtiyac yoxdur, çünki adını HTML-də dəyişdiniz */
 }
 .list-header .header-opinion {
     flex: 3; /* Əlinin Fikri */
@@ -298,8 +299,8 @@ main {
     font-weight: bold;
     font-size: 1.1em;
 }
-.game-details {
-    flex: 1; /* Təxmini Oynama Müddəti */
+.game-score { /* game-details yerinə gəlir */
+    flex: 1; 
     padding-right: 15px; 
     font-weight: bold;
     font-size: 1em;
