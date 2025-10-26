@@ -1,26 +1,26 @@
 // Nümunə oyun məlumatları - YENİ OYUNLARINIZ İLƏ
 const allGames = [
-    { title: "Mobile Legends Bang Bang", category: "all top10 ali-favourites", time: "9/10", opinion: "Əsəb xəstəsi etsədə yaxşı oyundu. Oynamanızı tövsiyə edirəm."},
-    { title: "Pubg Mobile", category: "all ali-favourites", time: "8/10", opinion: "Əvvəl bütün günü oynayırdım(Corona zamanı). İndi güncəlləmələrlə oyunu oynanmaz hala salıblar."},
-    { title: "Minecraft", category: "all top10 ali-favorites active", time: "10/10", opinion: "Uşaqlığım bunla keçdi. Deyəcək söz tapa bilmirəm oynayın, oynatdırın."},
-    { title: "Valorant Mobile", category: "all active", time: "8/10", opinion: "Birazcıq çətindi. Odakı teldə maksimum bu qədər olur. Ha birdəki hələki Çin dilindədi."},
-    { title: "Clash Of Clans", category: "all top10 ali-favorites active", time: "9/10", opinion: "Arada girib oynayıram amma əvvəlki kimi sarmır."},
-    { title: "Clash Royale", category: "all top10 ali-favorites active", time: "8/10", opinion: "Eh yəni güncəlləmələrlə biraz yaxşı gedirlərdə hələ mənim istədiyim evrim gəlmir. :/"},
-    { title: "Brawl Stars", category: "all active top10 ali-favorites", time: "7/10", opinion: "Oyunu hər nə qədər bəyənsəmdə bir yaxşı güncəlləmə gətirə bilmirlər."},
-    { title: "Hay Day", category: "all", time: "8/10", opinion: "Əslində biri üçün yükləmişdim əvvəl, çox oynayırdım. İndi arada girirəm odaki kefim istəyəndə."},
-    { title: "Rise Of Kingsdom", category: "all", time: "5/10", opinion: "O vaxtı çox bikarıydım, yükləmişdim"},
-    { title: "20 Minutes Till Dawn", category: "all", time: "6/10", opinion: "Əslində yaxşı oyunduda. Mənlik deyil, yəni davamlı oynamaq olmur."},
-    { title: "Among Us", category: "all", time: "7/10", opinion: "Mobilə gəlmiş yaxşı oyunlardan biri olmuşdu."},
-    { title: "Apex Legends Mobile", category: "all ali-favorites", time: "10/10", opinion: "Bağlanmamışdan əvvəl çox oynayırdım. Heyif bağlandı"},
-    { title: "Archero 1,2", category: "all", time: "4/10", opinion: "Əgər bikarsınızsa ola bilər."},
-    { title: "Genshin Impact", category: "all", time: "2/10", opinion: "Deyəcək sözüm yoxdu"},
-    { title: "UNO!", category: "all ali-favorites", time: "5/10", opinion: "Reklamlar olmasa oynamaq olar."},
-    { title: "Last Day On Earth: Survival", category: "all", time: "7/10", opinion: "Gözlədiyim kimi çıxmasada yaxşı oyundu."},
-    { title: "Call Of Duty", category: "all", time: "8/10", opinion: "Çox sarmasada əyləncəlidi."},
-    { title: "Grow Empire", category: "all", time: "6/10", opinion: "O vaxtı hiyləlisini yükləmişdim. Amma belədə idarə edər."},
-    { title: "Grow Castle", category: "all ali-favorites", time: "9/10", opinion: "Əvvəl dəli kimi oynayırdımda indi mənası yoxdu."},
-    { title: "Leauge Of Legends: Wild Rift", category: "all", time: "4/10", opinion: "Təzə videolarını gördüm. Bir MLBB qədər etmir."},
-    { title: "Into Dead 2", category: "all", time: "6/10", opinion: "Qaçmağı sevirsənsə tam sənlik"},
+    { title: "Mobile Legends Bang Bang", category: "all top10 ali-favourites", score: "9/10", opinion: "Əsəb xəstəsi etsədə yaxşı oyundu. Oynamanızı tövsiyə edirəm."},
+    { title: "Pubg Mobile", category: "all ali-favourites", score: "8/10", opinion: "Əvvəl bütün günü oynayırdım(Corona zamanı). İndi güncəlləmələrlə oyunu oynanmaz hala salıblar."},
+    { title: "Minecraft", category: "all top10 ali-favorites active", score: "10/10", opinion: "Uşaqlığım bunla keçdi. Deyəcək söz tapa bilmirəm oynayın, oynatdırın."},
+    { title: "Valorant Mobile", category: "all active", score: "8/10", opinion: "Birazcıq çətindi. Odakı teldə maksimum bu qədər olur. Ha birdəki hələki Çin dilindədi."},
+    { title: "Clash Of Clans", category: "all top10 ali-favorites active", score: "9/10", opinion: "Arada girib oynayıram amma əvvəlki kimi sarmır."},
+    { title: "Clash Royale", category: "all top10 ali-favorites active", score: "8/10", opinion: "Eh yəni güncəlləmələrlə biraz yaxşı gedirlərdə hələ mənim istədiyim evrim gəlmir. :/"},
+    { title: "Brawl Stars", category: "all active top10 ali-favorites", score: "7/10", opinion: "Oyunu hər nə qədər bəyənsəmdə bir yaxşı güncəlləmə gətirə bilmirlər."},
+    { title: "Hay Day", category: "all", score: "8/10", opinion: "Əslində biri üçün yükləmişdim əvvəl, çox oynayırdım. İndi arada girirəm odaki kefim istəyəndə."},
+    { title: "Rise Of Kingsdom", category: "all", score: "5/10", opinion: "O vaxtı çox bikarıydım, yükləmişdim"},
+    { title: "20 Minutes Till Dawn", category: "all", score: "6/10", opinion: "Əslində yaxşı oyunduda. Mənlik deyil, yəni davamlı oynamaq olmur."},
+    { title: "Among Us", category: "all", score: "7/10", opinion: "Mobilə gəlmiş yaxşı oyunlardan biri olmuşdu."},
+    { title: "Apex Legends Mobile", category: "all ali-favorites", score: "10/10", opinion: "Bağlanmamışdan əvvəl çox oynayırdım. Heyif bağlandı"},
+    { title: "Archero 1,2", category: "all", score: "4/10", opinion: "Əgər bikarsınızsa ola bilər."},
+    { title: "Genshin Impact", category: "all", score: "2/10", opinion: "Deyəcək sözüm yoxdu"},
+    { title: "UNO!", category: "all ali-favorites", score: "5/10", opinion: "Reklamlar olmasa oynamaq olar."},
+    { title: "Last Day On Earth: Survival", category: "all", score: "7/10", opinion: "Gözlədiyim kimi çıxmasada yaxşı oyundu."},
+    { title: "Call Of Duty", category: "all", score: "8/10", opinion: "Çox sarmasada əyləncəlidi."},
+    { title: "Grow Empire", category: "all", score: "6/10", opinion: "O vaxtı hiyləlisini yükləmişdim. Amma belədə idarə edər."},
+    { title: "Grow Castle", category: "all ali-favorites", score: "9/10", opinion: "Əvvəl dəli kimi oynayırdımda indi mənası yoxdu."},
+    { title: "Leauge Of Legends: Wild Rift", category: "all", score: "4/10", opinion: "Təzə videolarını gördüm. Bir MLBB qədər etmir."},
+    { title: "Into Dead 2", category: "all", score: "6/10", opinion: "Qaçmağı sevirsənsə tam sənlik"},
 ];
 
 const navButtons = document.querySelectorAll('.nav-button');
@@ -84,7 +84,7 @@ function applyTheme(themeName) {
     // Mövzu adını yerli yaddaşda saxla
     localStorage.setItem('selectedTheme', themeName);
 }
-// Sadəcə siyahını HTML-ə çıxaran funksiya
+// Sadəcə siyahını HTML-ə çıxaran funksiya - YENİLƏNDİ
 function renderGames(gamesToRender) {
     gameList.innerHTML = ''; 
 
@@ -93,14 +93,16 @@ function renderGames(gamesToRender) {
         return;
     }
 
-    gamesToRender.forEach(game => {
+    gamesToRender.forEach((game, index) => {
         const gameItem = document.createElement('div');
         gameItem.classList.add('game-item');
         
+        const gameNumber = index + 1; 
+        
         gameItem.innerHTML = `
+            <span class="game-number">${gameNumber}.</span>
             <span class="game-title">${game.title}</span>
-            <span class="game-details">${game.time}</span> 
-            <span class="game-opinion">${game.opinion}</span>
+            <span class="game-score">${game.score}</span> <span class="game-opinion">${game.opinion}</span>
         `;
         gameList.appendChild(gameItem);
     });
