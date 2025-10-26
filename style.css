@@ -76,13 +76,15 @@ nav {
 .action-button {
     padding: 8px 15px;
     background-color: var(--primary-color);
-    color: #000;
+    color: var(--text-color); /* DƏYİŞDİRİLDİ: Mətn rəngi mövzuya uyğun dəyişsin */
     border: none;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+/* QEYD: Əgər bu mətnin rəngi tünd mövzularda oxunmaz olsa, onun rəngini konkret ağ (#fff) etməli ola bilərik. Amma hazırda `var(--text-color)` ilə yoxlamaq lazımdır. */
 
 .action-button:hover {
     background-color: var(--secondary-color);
@@ -95,10 +97,11 @@ nav {
 /* PARAMETRLƏR MENYUSU (AÇILAN PƏNCƏRƏ) */
 #settings-menu {
     position: absolute;
-    top: 45px; /* Düymənin altında görünməsi üçün */
+    top: 45px;
     right: 0;
     width: 250px;
-    background-color: white;
+    background-color: var(--header-bg); /* DƏYİŞDİRİLDİ: Fon header rəngini alsın */
+    color: var(--text-color); /* DƏYİŞDİRİLDİ: Mətn rəngi mövzuya uyğun dəyişsin */
     border: 1px solid var(--border-color);
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,9 +132,9 @@ nav {
 
 .theme-button {
     padding: 8px;
-    background-color: #f8f8f8;
-    color: var(--dark-text);
-    border: 1px solid var(--line-color);
+    background-color: var(--background-color); /* DƏYİŞDİRİLDİ: Əsas fon rəngini alsın */
+    color: var(--text-color); /* DƏYİŞDİRİLDİ: Əsas mətn rəngini alsın */
+    border: 1px solid var(--line-color); 
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9em;
@@ -139,7 +142,7 @@ nav {
 }
 
 .theme-button:hover {
-    background-color: #eee;
+    background-color: var(--border-color); /* DƏYİŞDİRİLDİ: Hover rəngini dəyişənlə tənzimlə */
 }
 
 /* YENİ MÖVZU RƏNGLƏRİ (ROOT dəyişənlərini dəyişmək üçün siniflər) */
