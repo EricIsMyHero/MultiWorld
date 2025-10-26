@@ -62,14 +62,18 @@ nav {
     color: white;
 }
 
-/* YENİ SHARE BUTTON STILLƏRİ */
-.share-button {
+/* Parametrlər və Paylaşma düymələrini sağ üstdə bir yerdə saxlayan konteyner */
+.settings-container {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-.share-button button {
+/* Ümumi Hərəkət Düyməsi Stili */
+.action-button {
     padding: 8px 15px;
     background-color: var(--primary-color);
     color: white;
@@ -80,11 +84,90 @@ nav {
     transition: background-color 0.3s;
 }
 
-.share-button button:hover {
+.action-button:hover {
     background-color: var(--secondary-color);
 }
-/* YENİ SHARE BUTTON STILLƏRİ SONU */
 
+/* Paylaşma düyməsinin stilini action-button-a bənzətdim */
+.share-button-style {
+    /* share-button-un əvvəlki stillərini action-button-a daxil etdim */
+}
+
+/* PARAMETRLƏR MENYUSU (AÇILAN PƏNCƏRƏ) */
+#settings-menu {
+    position: absolute;
+    top: 45px; /* Düymənin altında görünməsi üçün */
+    right: 0;
+    width: 250px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.settings-menu-hidden {
+    display: none !important; /* JavaScript ilə açılıb bağlanacaq */
+}
+
+.setting-group {
+    margin-bottom: 15px;
+}
+
+.setting-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.theme-button {
+    padding: 8px;
+    background-color: #f8f8f8;
+    color: var(--dark-text);
+    border: 1px solid var(--line-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.theme-button:hover {
+    background-color: #eee;
+}
+
+/* YENİ MÖVZU RƏNGLƏRİ (ROOT dəyişənlərini dəyişmək üçün siniflər) */
+
+/* 1. Qırmızı-Qara Mövzu */
+.theme-red-black {
+    --primary-color: #FF4500; /* Qırmızı-Narıncı */
+    --secondary-color: #FF6347; /* Daha açıq qırmızı */
+    --background-color: #222; /* Tünd boz/qara fon */
+    --text-color: #fff; /* Ağ mətn */
+    --dark-text: #fff; /* Ağ mətn */
+    --border-color: #888;
+    --header-bg: #444; /* Tünd boz header */
+    --line-color: #333; /* Tünd xətlər */
+}
+
+/* 2. Ağ, Qara və Narıncı Mövzu */
+.theme-orange-dark {
+    --primary-color: #FFA500; /* Narıncı */
+    --secondary-color: #FFC468;
+    --background-color: #000; /* Qara fon */
+    --text-color: #fff; /* Ağ mətn */
+    --dark-text: #fff; /* Ağ mətn */
+    --border-color: #FFA500; /* Narıncı xətt */
+    --header-bg: #1a1a1a; /* Tünd boz header */
+    --line-color: #2a2a2a; /* Çox tünd xətlər */
+}
 
 main {
     padding: 20px;
