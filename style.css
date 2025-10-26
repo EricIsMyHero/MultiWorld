@@ -319,3 +319,96 @@ footer {
     color: var(--primary-color);
     font-size: 0.8em;
 }
+
+/* ======================================= */
+/* MEDİA SORĞULARI (MOBİL UYĞUNLUQ) */
+/* ======================================= */
+
+/* 1. PLANŞET ÖLÇÜSÜ ÜÇÜN DƏYİŞİKLİKLƏR (Maksimum 768px) */
+@media (max-width: 768px) {
+    
+    /* Main konteyneri daha geniş et */
+    main {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    /* Başlıqdakı böyük şrifti kiçilt */
+    h1 {
+        font-size: 2em;
+    }
+
+    /* Naviqasiya düymələri və filtr düymələri arasındakı boşluğu azaldır */
+    nav, .filter-controls {
+        gap: 10px;
+        padding: 0 5px;
+        flex-wrap: wrap; /* İkinci sıraya keçməyə icazə verir */
+    }
+
+    /* Axtarış sahəsini böyüt */
+    #search-input {
+        max-width: 100%; /* Bütün eni tutur */
+    }
+
+    /* ƏLİNİN FİKRİ sütununu bir az kiçiltmək */
+    .list-header .header-opinion {
+        flex: 2; /* 3-dən 2-yə düşürdük */
+    }
+
+    .game-opinion {
+        flex: 2; /* 3-dən 2-yə düşürdük */
+        font-size: 0.9em; /* Mətni kiçiltmək */
+    }
+}
+
+/* 2. KİÇİK MOBİL TELEFONLAR ÜÇÜN DƏYİŞİKLİKLƏR (Maksimum 576px) */
+@media (max-width: 576px) {
+    
+    /* Ən dar ekranlarda bəzi sütunları gizlətmək */
+    
+    /* ƏLİNİN FİKRİ (Opinion) sütununu tamamilə gizlət */
+    .list-header .header-opinion,
+    .game-opinion {
+        display: none !important;
+    }
+
+    /* Sıra nömrəsi sütununu daha da kiçilt */
+    .list-header .header-number,
+    .game-number {
+        flex: 0.2; 
+        font-size: 0.8em;
+    }
+
+    /* Xal (Score) sütununu kiçilt */
+    .list-header .header-score,
+    .game-score {
+        flex: 0.7; 
+        font-size: 0.9em;
+    }
+
+    /* Oyun Adı (Title) sütununu böyüt ki, boşluğu doldursun */
+    .list-header .header-title,
+    .game-title {
+        flex: 3;
+    }
+
+    /* Parametrlər və Paylaşma düymələrini alt-alta yığ */
+    .settings-container {
+        position: static;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    /* Header-dəki paddingi azaldır */
+    header {
+        padding: 10px 0;
+    }
+
+    /* Parametrlər menyusunu ekranın bütün enində göstər */
+    #settings-menu {
+        right: 5px;
+        left: 5px;
+        width: auto;
+    }
+}
