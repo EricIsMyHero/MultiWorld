@@ -1,17 +1,17 @@
 :root {
     --primary-color: #4CAF50;
     --secondary-color: #66BB6A;
-    --background-color: #eaeaea; 
-    --text-color: #000; /* Default: Qara mətn */
-    --dark-text: #000; /* Default: Qara başlıqlar/mətn */
-    --border-color: #b0b0b0; 
+    --background-color: #eaeaea; /* Açıq boz fon */
+    --text-color: #000;
+    --dark-text: #000;
+    --border-color: #b0b0b0; /* Daha tünd sərhəd rəngi */
     --header-bg: #e8f5e9; 
-    --line-color: #ddd; 
+    --line-color: #ddd; /* Sətir sərhədi üçün açıq rəng */
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--background-color); /* Yeni arxa fon */
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     color: var(--text-color);
@@ -88,9 +88,8 @@ nav {
     background-color: var(--secondary-color);
 }
 
-/* Paylaşma düyməsinin stilini action-button-a bənzətdim */
 .share-button-style {
-    /* share-button-un əvvəlki stillərini action-button-a daxil etdim */
+    /* Fon rəngi action-button tərəfindən idarə olunur */
 }
 
 /* PARAMETRLƏR MENYUSU (AÇILAN PƏNCƏRƏ) */
@@ -149,9 +148,9 @@ nav {
 .theme-red-black {
     --primary-color: #FF4500; 
     --secondary-color: #FF6347; 
-    --background-color: #222; /* Tünd fon */
-    --text-color: #000; /* Default: Qara mətn */
-    --dark-text: #000; /* Default: Qara başlıqlar/mətn */
+    --background-color: #222; 
+    --text-color: #fff; /* Tünd fonda ağ mətn qaldı, əks halda görünməyəcək */
+    --dark-text: #fff; 
     --border-color: #888;
     --header-bg: #444; 
     --line-color: #333; 
@@ -161,9 +160,9 @@ nav {
 .theme-orange-dark {
     --primary-color: #FFA500; 
     --secondary-color: #FFC468;
-    --background-color: #000; /* Qara fon */
-    --text-color: #000; /* Default: Qara mətn */
-    --dark-text: #000; /* Default: Qara başlıqlar/mətn */
+    --background-color: #000; 
+    --text-color: #fff; /* Tünd fonda ağ mətn qaldı */
+    --dark-text: #fff; 
     --border-color: #FFA500; 
     --header-bg: #1a1a1a; 
     --line-color: #2a2a2a; 
@@ -173,9 +172,9 @@ main {
     padding: 20px;
     max-width: 1200px;
     margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
+    background-color: transparent; /* DƏYİŞDİRİLDİ */
+    box-shadow: none; /* Kölgəni ləğv etdim */
+    border-radius: 0; /* Kəskin kənarları ləğv etdim */
 }
 
 /* FILTR DÜYMƏLƏRİ VƏ AXTARIŞ STİLLƏRİ */
@@ -232,6 +231,7 @@ main {
     margin-top: 20px;
     padding: 0; 
     overflow: hidden; 
+    background-color: transparent; /* Fonu şəffaf et */
 }
 
 /* Cədvəl Başlıqları Stili */
