@@ -102,7 +102,8 @@ function renderGames(gamesToRender) {
         gameItem.innerHTML = `
             <span class="game-number">${gameNumber}.</span>
             <span class="game-title">${game.title}</span>
-            <span class="game-score">${game.score}</span> <span class="game-opinion">${game.opinion}</span>
+            <span class="game-score">${game.score}</span> 
+            <span class="game-opinion">${game.opinion}</span>
         `;
         gameList.appendChild(gameItem);
     });
