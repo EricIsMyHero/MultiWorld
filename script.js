@@ -27,6 +27,10 @@ const navButtons = document.querySelectorAll('.nav-button');
 const filterButtons = document.querySelectorAll('.filter-button');
 const gameList = document.getElementById('game-list');
 const searchInput = document.getElementById('search-input'); // Yeni element
+const settingsButton = document.getElementById('settings-button');
+const settingsMenu = document.getElementById('settings-menu');
+const themeButtons = document.querySelectorAll('.theme-button');
+const body = document.body; // Mövzunu dəyişmək üçün body-i seçirik
 
 let currentCategory = 'all';
 let currentSort = 'az';
@@ -62,7 +66,24 @@ function updateGameList() {
     renderGames(filteredGames); 
 }
 
+// Parametrlər menyusunu açıb bağlamaq funksiyası
+function toggleSettingsMenu() {
+    settingsMenu.classList.toggle('settings-menu-hidden');
+}
 
+// Mövzu dəyişdirmə funksiyası
+function applyTheme(themeName) {
+    // Köhnə mövzu siniflərini sil
+    body.classList.remove('theme-red-black', 'theme-orange-dark');
+    
+    // Yalnız default deyilsə, yeni sinifi əlavə et
+    if (themeName !== 'default') {
+        body.classList.add(`theme-${themeName}`);
+    }
+    
+    // Mövzu adını yerli yaddaşda saxla
+    localStorage.setItem('selectedTheme', themeName);
+}
 // Sadəcə siyahını HTML-ə çıxaran funksiya
 function renderGames(gamesToRender) {
     gameList.innerHTML = ''; 
@@ -116,27 +137,37 @@ function shareSite() {
 }
 
 
-// DOM tam yükləndikdən sonra funksiyaları təyin et
+// DOM tam yükləndikdən sonra funksiyaları təyin et (YENİLƏNİB)
 document.addEventListener('DOMContentLoaded', () => {
-    // Naviqasiya düymələrinə klik hadisəsini əlavə et
-    navButtons.forEach(button => {
-        button.addEventListener('click', handleNavClick);
-    });
-    
-    // Filtr düymələrinə klik hadisəsini əlavə et
-    filterButtons.forEach(button => {
-        button.addEventListener('click', handleSortClick);
-    });
+    // Yerli yaddaşdan mövzunu yüklə
+    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+    applyTheme(savedTheme);
 
-    // Axtarış sahəsinə 'input' hadisəsini əlavə et
+    // Naviqasiya və Filtr düymələri (olduğu kimi qalır)
+    navButtons.forEach(button => button.addEventListener('click', handleNavClick));
+    filterButtons.forEach(button => button.addEventListener('click', handleSortClick));
+    
+    // Axtarış sahəsi (olduğu kimi qalır)
     searchInput.addEventListener('input', updateGameList);
 
-    // Paylaşma düyməsinə klik hadisəsini əlavə et
+    // Paylaşma düyməsi (olduğu kimi qalır)
     const shareButton = document.getElementById('share-button-id');
     if (shareButton) {
         shareButton.addEventListener('click', shareSite);
     }
     
+    // YENİ: Parametrlər düyməsi hadisəsi
+    settingsButton.addEventListener('click', toggleSettingsMenu);
+
+    // YENİ: Mövzu düymələri hadisəsi
+    themeButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const newTheme = event.currentTarget.getAttribute('data-theme');
+            applyTheme(newTheme);
+            toggleSettingsMenu(); // Seçim edildikdən sonra menyunu bağla
+        });
+    });
+
     // Səhifə yüklənərkən ilkin siyahını göstər
     updateGameList();
 });
