@@ -49,27 +49,44 @@ let currentSort = 'az';
 
 // Oyunları filtrləyib sıralayan ƏSAS FUNKSİYA - Axtarış əlavə edildi
 function updateGameList() {
-    const searchTerm = searchInput.value.toLowerCase(); // Axtarış mətnini al
+    const searchTerm = searchInput.value.toLowerCase();
 
-    // 1. Filtrləmə (Kateqoriya və Axtarışa görə)
     let filteredGames = allGames.filter(game => {
         const categoryMatch = game.category.includes(currentCategory);
-        const searchMatch = game.title.toLowerCase().includes(searchTerm); // Oyun adına görə axtar
+        const searchMatch = game.title.toLowerCase().includes(searchTerm);
         return categoryMatch && searchMatch;
     });
 
-    // 2. Sıralama (A-Z / Z-A)
+    // 2. Sıralama (A-Z / Z-A / Xala Görə)
     filteredGames.sort((a, b) => {
-        const titleA = a.title.toUpperCase();
-        const titleB = b.title.toUpperCase();
+        // Xal dəyərlərini rəqəmlə müqayisə etmək üçün çıxarırıq (məs. "9/10" -> 9)
+        const scoreA = parseInt(a.score.split('/')[0]);
+        const scoreB = parseInt(b.score.split('/')[0]);
 
         if (currentSort === 'az') {
+            const titleA = a.title.toUpperCase();
+            const titleB = b.title.toUpperCase();
             if (titleA < titleB) return -1;
             if (titleA > titleB) return 1;
             return 0;
-        } else if (currentSort === 'za') {
+        } 
+        else if (currentSort === 'za') {
+            const titleA = a.title.toUpperCase();
+            const titleB = b.title.toUpperCase();
             if (titleA > titleB) return -1;
             if (titleA < titleB) return 1;
+            return 0;
+        } 
+        else if (currentSort === 'score-high') {
+            // Yüksək Xaldan aşağı Xala doğru sıralama (Ən yaxşılar yuxarıda)
+            if (scoreA > scoreB) return -1;
+            if (scoreA < scoreB) return 1;
+            
+            // Xallar bərabərdirsə, A-Z sıralamasını tətbiq et (Kənar hal üçün)
+            const titleA = a.title.toUpperCase();
+            const titleB = b.title.toUpperCase();
+            if (titleA < titleB) return -1;
+            if (titleA > titleB) return 1;
             return 0;
         }
         return 0;
@@ -186,3 +203,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Səhifə yüklənərkən ilkin siyahını göstər
     updateGameList();
 });
+
+// script.js faylında DOMContentLoaded blokundan kənarda əlavə edin
+
+const scrollToTopButton = document.getElementById('scroll-to-top');
+
+// Səhifə sürüşdürüldükdə düyməni göstərmək/gizlətmək
+window.addEventListener('scroll', () => {
+    // 300px aşağı sürüşdürüldükdə göstər
+    if (window.scrollY > 300) {
+        scrollToTopButton.classList.remove('scroll-to-top-hidden');
+    } else {
+        scrollToTopButton.classList.add('scroll-to-top-hidden');
+    }
+});
+
+// Düyməyə kliklənəndə yuxarı sürüşdürmək
+if (scrollToTopButton) {
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Rahat sürüşmə effekti
+        });
+    });
+}
