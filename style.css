@@ -1,12 +1,12 @@
 :root {
     --primary-color: #4CAF50;
     --secondary-color: #66BB6A;
-    --background-color: #eaeaea; /* Açıq boz fon */
-    --text-color: #000;
-    --dark-text: #000;
-    --border-color: #b0b0b0; /* Daha tünd sərhəd rəngi */
+    --background-color: #eaeaea; 
+    --text-color: #000; /* Default: Qara mətn */
+    --dark-text: #000; /* Default: Qara başlıqlar/mətn */
+    --border-color: #b0b0b0; 
     --header-bg: #e8f5e9; 
-    --line-color: #ddd; /* Sətir sərhədi üçün açıq rəng */
+    --line-color: #ddd; 
 }
 
 body {
@@ -147,26 +147,26 @@ nav {
 
 /* 1. Qırmızı-Qara Mövzu */
 .theme-red-black {
-    --primary-color: #FF4500; /* Qırmızı-Narıncı */
-    --secondary-color: #FF6347; /* Daha açıq qırmızı */
-    --background-color: #222; /* Tünd boz/qara fon */
+    --primary-color: #FF4500; 
+    --secondary-color: #FF6347; 
+    --background-color: #222; /* Tünd fon */
     --text-color: #fff; /* Ağ mətn */
     --dark-text: #fff; /* Ağ mətn */
     --border-color: #888;
-    --header-bg: #444; /* Tünd boz header */
-    --line-color: #333; /* Tünd xətlər */
+    --header-bg: #444; 
+    --line-color: #333; 
 }
 
 /* 2. Ağ, Qara və Narıncı Mövzu */
 .theme-orange-dark {
-    --primary-color: #FFA500; /* Narıncı */
+    --primary-color: #FFA500; 
     --secondary-color: #FFC468;
     --background-color: #000; /* Qara fon */
     --text-color: #fff; /* Ağ mətn */
     --dark-text: #fff; /* Ağ mətn */
-    --border-color: #FFA500; /* Narıncı xətt */
-    --header-bg: #1a1a1a; /* Tünd boz header */
-    --line-color: #2a2a2a; /* Çox tünd xətlər */
+    --border-color: #FFA500; 
+    --header-bg: #1a1a1a; 
+    --line-color: #2a2a2a; 
 }
 
 main {
