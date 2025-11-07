@@ -1,19 +1,30 @@
 // Nümunə oyun məlumatları - YENİ OYUNLARINIZ İLƏ
 const allGames = [
+    { title: "Among Us", category: "all", score: "7/10", opinion: "Mobilə gəlmiş yaxşı oyunlardan biri olmuşdu."},
+    { title: "Apex Legends Mobile", category: "all ali-favorites", score: "9/10", opinion: "Bağlanmamışdan əvvəl çox oynayırdım. Heyif ki, bağlandı."},
+    { title: "Archero 1", category: "all", score: "4/10", opinion: "Əgər bikarsınızsa ola bilər."},
+    { title: "Archero 2", category: "all", score: "5/10", opinion: "Əgər həqiqətən bikarsınızsa ola bilər."},
+    { title: "Ant Colony: Wild Forest Game", category: "all", score: "6/10", opinion: "Sadəcə qarışqa simulator."},
+    { title: "Aestheta", category: "all", score: "2/10", opinion: "Clash Royale çakmasıdı."},
+    { title: "Ammo Fever: Tower Gun Defense", category: "all", score: "4/10", opinion: "Bikarçılıqdan oynamaq olar."},
+    { title: "Aestheta", category: "all", score: "4/10", opinion: "Clash Royale çakmasıdı."},
+    { title: "Archers Online: PvP", category: "all", score: "5/10", opinion: "Əslində maraqlı oyundu."},
+
+    { title: "Brawl Stars", category: "all active top10 ali-favorites", score: "8/10", opinion: "Oyunu hər nə qədər bəyənsəmdə bir yaxşı güncəlləmə gətirə bilmirlər."},
+    { title: "Bad 2 Bad: Apocalypse", category: "all", score: "7/10", opinion: "Yaxşı mənada qəribə oyun idi. Çoxda oynanılası gəlmədi."},
+    { title: "Brotato", category: "all ali-favorites", score: "8/10", opinion: "Arada komputerdə sıxılanda oynayıram. Mobile olanıda yaxşıdı."},
+    { title: "Block Blast!", category: "all", score: "7/10", opinion: "Bu oyun niyə hər kəsin telefonunda var?"},
+    
     { title: "Mobile Legends Bang Bang", category: "all top10 ali-favourites", score: "10/10", opinion: "Əsəb xəstəsi etsədə yaxşı oyundu. Oynamanızı tövsiyə edirəm."},
     { title: "Pubg Mobile", category: "all ali-favourites", score: "8/10", opinion: "Əvvəl bütün günü oynayırdım(Corona zamanı). İndi güncəlləmələrlə oyunu oynanmaz hala salıblar."},
     { title: "Minecraft", category: "all top10 ali-favorites active", score: "10/10", opinion: "Uşaqlığım bunla keçdi. Deyəcək söz tapa bilmirəm oynayın, oynatdırın."},
     { title: "Valorant Mobile", category: "all active", score: "8/10", opinion: "Birazcıq çətindi. Odakı teldə maksimum bu qədər olur. Ha birdəki hələki Çin dilindədi."},
     { title: "Clash Of Clans", category: "all top10 ali-favorites active", score: "9/10", opinion: "Arada girib oynayıram amma əvvəlki kimi sarmır."},
     { title: "Clash Royale", category: "all top10 ali-favorites active", score: "9/10", opinion: "Eh yəni güncəlləmələrlə biraz yaxşı gedirlərdə hələ mənim istədiyim evrim gəlmir. :/"},
-    { title: "Brawl Stars", category: "all active top10 ali-favorites", score: "8/10", opinion: "Oyunu hər nə qədər bəyənsəmdə bir yaxşı güncəlləmə gətirə bilmirlər."},
+    
     { title: "Hay Day", category: "all", score: "8/10", opinion: "Əslində biri üçün yükləmişdim əvvəl, çox oynayırdım. İndi arada girirəm odaki kefim istəyəndə."},
     { title: "Rise Of Kingsdom", category: "all", score: "5/10", opinion: "O vaxtı çox bikarıydım, yükləmişdim."},
     { title: "20 Minutes Till Dawn", category: "all", score: "6/10", opinion: "Əslində yaxşı oyunduda. Mənlik deyil, yəni davamlı oynamaq olmur."},
-    { title: "Among Us", category: "all", score: "7/10", opinion: "Mobilə gəlmiş yaxşı oyunlardan biri olmuşdu."},
-    { title: "Apex Legends Mobile", category: "all ali-favorites", score: "9/10", opinion: "Bağlanmamışdan əvvəl çox oynayırdım. Heyif ki, bağlandı."},
-    { title: "Archero 1", category: "all", score: "4/10", opinion: "Əgər bikarsınızsa ola bilər."},
-    { title: "Archero 2", category: "all", score: "5/10", opinion: "Əgər həqiqətən bikarsınızsa ola bilər."},
     { title: "Genshin Impact", category: "all", score: "2/10", opinion: "Deyəcək sözüm yoxdu."},
     { title: "UNO!", category: "all", score: "5/10", opinion: "Reklamlar olmasa oynamaq olar."},
     { title: "Last Day On Earth: Survival", category: "all", score: "7/10", opinion: "Gözlədiyim kimi çıxmasada yaxşı oyundu."},
@@ -22,13 +33,12 @@ const allGames = [
     { title: "Grow Castle", category: "all ali-favorites", score: "9/10", opinion: "Əvvəl dəli kimi oynayırdımda indi mənası yoxdu."},
     { title: "Leauge Of Legends: Wild Rift", category: "all", score: "4/10", opinion: "Təzə videolarını gördüm. Bir MLBB qədər etmir."},
     { title: "Into Dead 2", category: "all", score: "6/10", opinion: "Qaçmağı sevirsənsə tam sənlik"},
-    { title: "Ant Colony: Wild Forest Game", category: "all", score: "6/10", opinion: "Sadəcə qarışqa simulator."},
-    { title: "Bad 2 Bad: Apocalypse", category: "all", score: "7/10", opinion: "Yaxşı mənada qəribə oyun idi. Çoxda oynanılası gəlmədi."},
-    { title: "Brotato", category: "all ali-favorites", score: "8/10", opinion: "Arada komputerdə sıxılanda oynayıram. Mobile olanıda yaxşıdı."},
+    
+    
     { title: "Combat Master Mobile FPS", category: "all", score: "8/10", opinion: "Komputerdə olanı əladı, amma bunu bəyənmədim."},
     { title: "Earth Inc. Tycoon Idle Miner", category: "all", score: "5/10", opinion: "İdarə edər nə yalan deyim."},
     { title: "Fortres Of Gears", category: "all", score: "4/10", opinion: "Sözüm yoxdu. O vaxtı elə belə oynayırdım."},
-    { title: "Block Blast!", category: "all", score: "7/10", opinion: "Bu oyun niyə hər kəsin telefonunda var?"},
+    
     { title: "Inventory Merge Combat", category: "all", score: "5/10", opinion: "Eh normal bir oyundu."},
     { title: "PvZ 2", category: "all ali-favorites active top10", score: "9/10", opinion: "Əlbəttə bu oyun olmazsa olmaz."},
     { title: "Laser Bounce Puzzle", category: "all", score: "5/10", opinion: "Buda normal vaxt keçirməlik bir oyundu."},
@@ -40,13 +50,14 @@ const allGames = [
     { title: "Royal Match", category: "all ali-favorites", score: "7/10", opinion: "Reklamsız olması əladı."},
     { title: "Pill Fortress", category: "all", score: "5/10", opinion: "Eh, yəni idarə edər."},
     { title: "Stick War: Saga", category: "all ali-favorites active", score: "8/10", opinion: "Bunun ikinci oyunuda əlaydı, buda eyniylə."},
-    { title: "Stick War: Legacy", category: "all ali-favorites top10", score: "9/10", opinion: "Uşaqkən oynayırdım. Tövsiyyə edirəm"},
+    { title: "Stick War: Legacy", category: "all ali-favorites top10", score: "9/10", opinion: "Uşaqkən oynayırdım. Tövsiyyə edirəm."},
+    
 ];
 
 const navButtons = document.querySelectorAll('.nav-button');
 const filterButtons = document.querySelectorAll('.filter-button');
 const gameList = document.getElementById('game-list');
-const searchInput = document.getElementById('search-input'); // Yeni element
+const searchInput = document.getElementById('search-input'); 
 const settingsButton = document.getElementById('settings-button');
 const settingsMenu = document.getElementById('settings-menu');
 const themeButtons = document.querySelectorAll('.theme-button');
@@ -55,7 +66,7 @@ const body = document.body; // Mövzunu dəyişmək üçün body-i seçirik
 let currentCategory = 'all';
 let currentSort = 'az';
 
-// Oyunları filtrləyib sıralayan ƏSAS FUNKSİYA - Axtarış əlavə edildi
+// Oyunları filtrləyib sıralayan ƏSAS FUNKSİYA
 function updateGameList() {
     const searchTerm = searchInput.value.toLowerCase();
 
