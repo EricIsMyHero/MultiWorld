@@ -43,7 +43,7 @@ const allGames = [
     { title: "Grow Empire", category: "all", score: "6/10", opinion: "O vaxtı hiyləlisini yükləmişdim. Amma belədə idarə edər."},
     { title: "Grow Castle", category: "all ali-favorites", score: "9/10", opinion: "Əvvəl dəli kimi oynayırdımda indi mənası yoxdu."},
     { title: "Leauge Of Legends: Wild Rift", category: "all", score: "4/10", opinion: "Təzə videolarını gördüm. Bir MLBB qədər etmir."},
-    { title: "Into Dead 2", category: "all", score: "6/10", opinion: "Qaçmağı sevirsənsə tam sənlik"},
+    { title: "Into Dead 2", category: "all", score: "6/10", opinion: "Qaçmağı sevirsənsə tam sənlik."},
     { title: "Inventory Merge Combat", category: "all", score: "5/10", opinion: "Eh normal bir oyundu."},
     { title: "PvZ 2", category: "all ali-favorites active top10", score: "9/10", opinion: "Əlbəttə bu oyun olmazsa olmaz."},
     { title: "Laser Bounce Puzzle", category: "all", score: "5/10", opinion: "Buda normal vaxt keçirməlik bir oyundu."},
